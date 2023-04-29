@@ -1,0 +1,11 @@
+[28-Apr-2023 12:15:34 UTC] [critical] Error thrown while running command "debug". Message: "Command "debug" is not defined.
+
+Did you mean one of these?
+    debug:autowiring
+    debug:config
+    debug:container
+    debug:dotenv
+    debug:event-dispatcher
+    debug:firewall
+    debug:router
+    debug:validator"
