@@ -19,7 +19,6 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 
 class ActivityController extends AbstractController
 {
-
     #[Route('/api/activity/list', name: 'getActivityList', methods: ['GET'])]
     public function getAllActivities(
         SerializerInterface $serializer,
