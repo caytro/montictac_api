@@ -37,7 +37,12 @@ class UserController extends AbstractController
             $plainTextPassword
         );
         $user->setPassword($hashedPassword);
-        $userRepository->save($user, true);
+        try{
+            $userRepository->save($user, true);
+        }
+        catch (\Exception $e){
+            return new JsonResponse(["message"=>$e->getMessage(), "code"=>$e->getCode()], JsonResponse::HTTP_INTERNAL_SERVER_ERROR,[],false);
+        }
         $jsonUser = $serializer->serialize($user, 'json');
         return new JsonResponse($jsonUser, Response::HTTP_CREATED);
     }
